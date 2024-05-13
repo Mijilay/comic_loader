@@ -45,10 +45,11 @@ def upload_files(bot_api_key, chat_id):
 
 def main():
     load_dotenv()
-    bot_api_key = os.environ['BOT_API_KEY']
+    bot_api_key = os.environ['TG_BOT_API']
     chat_id = os.environ['TG_CHAT_ID']
     
     upload_files(bot_api_key, chat_id)
+    os.remove(filename)
 
 
 if __name__ == '__main__':
