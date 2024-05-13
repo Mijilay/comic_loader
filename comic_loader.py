@@ -34,10 +34,8 @@ def upload_files(bot_api_key, chat_id):
     png_url, alt, title = save_comic()
     filename = f'{title}.png'
     bot = telegram.Bot(token=bot_api_key)
-    print('Комикс загружен.')
     with open(filename, 'rb') as file:
         bot.send_photo(chat_id=chat_id, photo=file, caption=alt)
-        print('Комикс опубликован.')
     os.remove(filename)
 
 
