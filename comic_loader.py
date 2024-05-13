@@ -28,8 +28,7 @@ def save_comic():
     png_url = comic_info['img']
     alt = comic_info['alt']
     title = comic_info['title']
-    
-    download_comic(f'{title}.png', png_url)
+
     return png_url, alt, title 
 def upload_files(bot_api_key, chat_id):
     png_url, alt, title = save_comic()
@@ -47,8 +46,8 @@ def main():
     load_dotenv()
     bot_api_key = os.environ['TG_BOT_API']
     chat_id = os.environ['TG_CHAT_ID']
-    
     upload_files(bot_api_key, chat_id)
+    download_comic(f'{title}.png', png_url)
     os.remove(filename)
 
 
