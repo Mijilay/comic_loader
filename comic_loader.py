@@ -37,8 +37,6 @@ def upload_file(bot_api_key, chat_id, title, alt):
         bot.send_photo(chat_id=chat_id, photo=file, caption=alt)
     return filename
 
-
-
 def main():
     load_dotenv()
     bot_api_key = os.environ['TG_BOT_API']
@@ -50,7 +48,6 @@ def main():
         filename = upload_file(bot_api_key, chat_id, title, alt)
     finally:
         os.remove(filename)
-
 
 if __name__ == '__main__':
     main()
